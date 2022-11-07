@@ -1,0 +1,15 @@
+#!/bin/bash
+sudo apt install apache2
+sudo systemctl start apache2
+sudo chown -R $USER:$USER /var/www
+cd /var/www/html/
+echo '<!DOCTYPE html>' > index.html
+echo '</head>' >> index.html
+echo '<body>' >> index.html
+echo '<h1>Oleksandr Mazurenko</h1>' >> index.html
+echo '</body>' >> index.html
+echo '</html>' >> index.html
+cd /etc/apache2/sites-available/
+echo > 
+service apache2 restart
+chmod +x webserver.sh
